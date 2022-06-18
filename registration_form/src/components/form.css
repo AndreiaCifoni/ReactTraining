@@ -1,8 +1,15 @@
 .container {
-  width: 40%;
+  width: 35%;
   padding: 20px;
   margin: 30px;
   background-color: pink;
+}
+
+.container-second {
+  width: 35%;
+  padding: 20px;
+  margin: 30px;
+  background-color: rgb(161, 161, 249);
 }
 
 input {
@@ -22,4 +29,8 @@ button {
 p {
   font-size: 16px;
   margin-left: 10px;
+}
+
+.success {
+  background-color: rgb(113, 205, 113);
 }
