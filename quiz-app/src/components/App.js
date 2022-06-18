@@ -4,38 +4,98 @@ import Quiz from "./Quiz";
 const quiz = [
   {
     question: "What was the first pokemon that Ash received?",
-    option1: "Charmander",
-    option2: "Bulbasaur",
-    option3: "Pikachu",
-    option4: "Squirtle",
+    option1: {
+      key: "Charmander",
+      answer: false,
+    },
+    option2: {
+      key: "Bulbasaur",
+      answer: false,
+    },
+    option3: {
+      key: "Pikachu",
+      answer: true,
+    },
+    option4: {
+      key: "Squirtle",
+      answer: false,
+    },
   },
   {
     question: "Who was Ash's firts rival?",
-    option1: "Gary",
-    option2: "Brock",
-    option3: "Trevor",
-    option4: "Serena",
+    option1: {
+      key: "Gary",
+      answer: true,
+    },
+    option2: {
+      key: "Brock",
+      answer: false,
+    },
+    option3: {
+      key: "Trevor",
+      answer: false,
+    },
+    option4: {
+      key: "Serena",
+      answer: false,
+    },
   },
   {
     question: "What type of pokemon is Psyduck?",
-    option1: "Fire",
-    option2: "Water",
-    option3: "Earth",
-    option4: "Psychic",
+    option1: {
+      key: "Fire",
+      answer: false,
+    },
+    option2: {
+      key: "Water",
+      answer: false,
+    },
+    option3: {
+      key: "Earth",
+      answer: false,
+    },
+    option4: {
+      key: "Psychic",
+      answer: true,
+    },
   },
   {
     question: "What is the evolution of Kadabra?",
-    option1: "Geodude",
-    option2: "Haunter",
-    option3: "Alakazan",
-    option4: "Hypno",
+    option1: {
+      key: "Geodude",
+      answer: false,
+    },
+    option2: {
+      key: "Haunter",
+      answer: false,
+    },
+    option3: {
+      key: "Alakazan",
+      answer: true,
+    },
+    option4: {
+      key: "Hypno",
+      answer: false,
+    },
   },
   {
     question: "Where does the pokemon Chansey works?",
-    option1: "Hospital",
-    option2: "Aquarium",
-    option3: "Gymnasium",
-    option4: "Restaurant",
+    option1: {
+      key: "Hospital",
+      answer: true,
+    },
+    option2: {
+      key: "Aquarium",
+      answer: false,
+    },
+    option3: {
+      key: "Gymnasium",
+      answer: false,
+    },
+    option4: {
+      key: "Restaurant",
+      answer: false,
+    },
   },
 ];
 
