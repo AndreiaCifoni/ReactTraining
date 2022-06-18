@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import "./form.css";
 
-const Form = () => {
+const Form = ({ onSuccess, onFail }) => {
   const [term, setTerm] = useState({
     firstName: "",
     lastName: "",
@@ -9,10 +10,15 @@ const Form = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
+    if (term.firstName !== "" && term.lastName !== "" && term.email !== "") {
+      onSuccess();
+    } else {
+      onFail();
+    }
   };
 
   return (
-    <div>
+    <div className="container">
       <form onSubmit={onSubmitHandler}>
         <div>
           <input
@@ -21,9 +27,7 @@ const Form = () => {
             value={term.firstName}
             onChange={(e) => setTerm({ ...term, firstName: e.target.value })}
           />
-          {onSubmitHandler && term.firstName !== "" ? null : (
-            <span>This field is mandatory</span>
-          )}
+
           <input
             type="text"
             placeholder="Last Name"
