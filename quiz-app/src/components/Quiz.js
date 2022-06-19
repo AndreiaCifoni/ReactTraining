@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ShowScore from "./ShowScore";
 import "./styles.css";
 
 const Quiz = ({ quiz }) => {
@@ -6,7 +7,7 @@ const Quiz = ({ quiz }) => {
   const [score, setScore] = useState(0);
 
   const onNext = () => {
-    if (quizIndex < quiz.length - 1) {
+    if (quizIndex < quiz.length) {
       setQuizIndex(quizIndex + 1);
     }
   };
@@ -24,28 +25,35 @@ const Quiz = ({ quiz }) => {
     onNext();
   };
 
-  console.log(score);
+  const onStartAgain = () => {
+    setQuizIndex(0);
+    setScore(0);
+  };
 
   return (
     <div className="container">
-      <h1>Question {quizIndex + 1}</h1>
-      <p>{quiz[quizIndex].question}</p>
-      <div className="container-options">
-        {quiz[quizIndex].options.map((option) => {
-          return (
-            <button
-              onClick={() => onAnswerSelected(option)}
-              className="btn btn-option"
-            >
-              {option.key}
-            </button>
-          );
-        })}
-      </div>
+      {quizIndex === quiz.length ? (
+        <ShowScore score={score} onStartAgain={onStartAgain} />
+      ) : (
+        <div>
+          <h1>Question {quizIndex + 1}</h1>
+          <p>{quiz[quizIndex].question}</p>
+          <div className="container-options">
+            {quiz[quizIndex].options.map((option) => {
+              return (
+                <button
+                  onClick={() => onAnswerSelected(option)}
+                  className="btn btn-option"
+                >
+                  {option.key}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
 export default Quiz;
-
-// className={option.isCorrect ? "btn btn-option" : }

@@ -40,13 +40,13 @@
   background-color: #19515d;
 }
 
-.btn-pn {
+.btn-start-again {
   color: #fff;
   background-color: #19515d;
   border: 2px solid #19515d;
 }
 
-.btn-pn:hover {
+.btn-start-again:hover {
   color: #19515d;
   background-color: #fff;
 }
