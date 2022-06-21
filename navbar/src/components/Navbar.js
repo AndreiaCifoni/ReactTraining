@@ -4,10 +4,10 @@ import MenuItems from "./MenuItem";
 import { HiMenu, HiOutlineX } from "react-icons/hi";
 
 const Navbar = () => {
-  const [iconClicked, setIconClicked] = useState("false");
+  const [clicked, setClicked] = useState("false");
 
   const onClickIcon = () => {
-    setIconClicked(!iconClicked);
+    setClicked(!clicked);
   };
 
   return (
@@ -15,14 +15,14 @@ const Navbar = () => {
       <h1 className="nav-title">Navbar</h1>
       <div className="nav-icon">
         <i onClick={onClickIcon}>
-          {iconClicked ? (
+          {clicked ? (
             <HiMenu className="icon" />
           ) : (
             <HiOutlineX className="icon" />
           )}
         </i>
       </div>
-      <ul>
+      <ul className={clicked ? "nav-items active" : "nav-items"}>
         {MenuItems.map((item, index) => {
           return (
             <li key={index}>
