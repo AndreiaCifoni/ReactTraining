@@ -22,7 +22,7 @@ const Navbar = () => {
           )}
         </i>
       </div>
-      <ul className={clicked ? "nav-items active" : "nav-items"}>
+      <ul className={clicked ? "nav-items" : "nav-items active"}>
         {MenuItems.map((item, index) => {
           return (
             <li key={index}>

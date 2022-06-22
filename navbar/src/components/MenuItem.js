@@ -19,6 +19,11 @@ const MenuItems = [
     url: "#",
     cName: "nav-link",
   },
+  {
+    title: "Sign up",
+    url: "#",
+    cName: "nav-link-mobile",
+  },
 ];
 
 export default MenuItems;
