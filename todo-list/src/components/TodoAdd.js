@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { HiPlus } from "react-icons/hi";
+import { PlusIcon } from "@heroicons/react/solid";
+import ".././layout/layout.css";
 
 const TodoAdd = () => {
   const [todo, setTodo] = useState("");
@@ -12,7 +13,7 @@ const TodoAdd = () => {
     <div>
       <input type="text" value={todo} onChange={onChangeAddTodo} />
       <button>
-        <HiPlus />
+        <PlusIcon className="icon" />
       </button>
     </div>
   );
