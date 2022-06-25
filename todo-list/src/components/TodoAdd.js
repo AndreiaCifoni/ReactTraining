@@ -11,14 +11,20 @@ const TodoAdd = () => {
     setTodoInput(e.target.value);
   };
 
-  const onClickAddTodo = () => {
+  const onAddTodo = () => {
     setTodos([...todos, { task: todoInput, id: uuidv4() }]);
+    setTodoInput("");
+  };
+
+  const onDeleteTodo = (id) => {
+    const filteredTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(filteredTodos);
   };
 
   return (
     <div>
       <input type="text" value={todoInput} onChange={onChangeInput} />
-      <button onClick={onClickAddTodo}>
+      <button onClick={onAddTodo}>
         <PlusIcon className="icon" />
       </button>
       <ul>
@@ -26,7 +32,7 @@ const TodoAdd = () => {
           <li>
             {todo.task}
             <CheckCircleIcon className="icon" />
-            <TrashIcon className="icon" />
+            <TrashIcon onClick={() => onDeleteTodo(todo.id)} className="icon" />
           </li>
         ))}
       </ul>
