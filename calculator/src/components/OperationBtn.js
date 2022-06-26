@@ -1,12 +1,20 @@
 import React from "react";
+import "../style.css";
 
-const OperationBtn = () => {
-  const operators = ["+", "-", "*", "/", "="];
+const OperationBtn = ({ onOperatorBtn }) => {
+  const operators = ["+", "-", "x", "/"];
 
   return (
     <div>
       {operators.map((operator) => {
-        return <button className="btn-operator">{operator}</button>;
+        return (
+          <button
+            onClick={() => onOperatorBtn(operator)}
+            className="btn-operator"
+          >
+            {operator}
+          </button>
+        );
       })}
     </div>
   );
