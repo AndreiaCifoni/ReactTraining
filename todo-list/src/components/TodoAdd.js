@@ -12,8 +12,18 @@ const TodoAdd = () => {
   };
 
   const onAddTodo = () => {
-    setTodos([...todos, { task: todoInput, id: uuidv4() }]);
+    setTodos([...todos, { task: todoInput, id: uuidv4(), completed: false }]);
     setTodoInput("");
+  };
+
+  const onCompletedTodo = (id) => {
+    const updatedTodos = todos.map((todo) => {
+      if (todo.id === id) {
+        return { ...todo, completed: !todo.completed };
+      }
+      return todo;
+    });
+    setTodos(updatedTodos);
   };
 
   const onDeleteTodo = (id) => {
@@ -22,17 +32,23 @@ const TodoAdd = () => {
   };
 
   return (
-    <div>
+    <div className="container2">
       <input type="text" value={todoInput} onChange={onChangeInput} />
       <button onClick={onAddTodo}>
-        <PlusIcon className="icon" />
+        <PlusIcon className="icon-plus" />
       </button>
-      <ul>
+      <ul className="list">
         {todos.map((todo) => (
-          <li>
+          <li className={todo.completed ? "done" : ""}>
             {todo.task}
-            <CheckCircleIcon className="icon" />
-            <TrashIcon onClick={() => onDeleteTodo(todo.id)} className="icon" />
+            <CheckCircleIcon
+              onClick={() => onCompletedTodo(todo.id)}
+              className={todo.completed ? "icon-check done" : "icon-check"}
+            />
+            <TrashIcon
+              onClick={() => onDeleteTodo(todo.id)}
+              className={todo.completed ? "icon-trash done" : "icon-trash"}
+            />
           </li>
         ))}
       </ul>
@@ -41,5 +57,3 @@ const TodoAdd = () => {
 };
 
 export default TodoAdd;
-
-// uuidv4()

@@ -1,10 +1,11 @@
 import React from "react";
 import TodoAdd from "./TodoAdd";
+import ".././layout/layout.css";
 
 const App = () => {
   return (
-    <div>
-      <h1>ToDo List</h1>
+    <div className="container1">
+      <h1 className="title">ToDo List</h1>
       <TodoAdd />
     </div>
   );
