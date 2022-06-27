@@ -21,7 +21,12 @@ const App = () => {
     }
   };
 
-  //onClear
+  const onClear = () => {
+    setNum1("");
+    setNum2("");
+    setOperator("");
+  };
+
   //onResult
 
   return (
@@ -29,9 +34,13 @@ const App = () => {
       <div>
         <p>{num1 + operator + num2}</p>
       </div>
-      <NumericBtn onNumBtn={onNumBtn} />
-      <OperationBtn onOperatorBtn={onOperatorBtn} />
-      <button>Clear</button>
+      <div>
+        <NumericBtn onNumBtn={onNumBtn} />
+      </div>
+      <div>
+        <OperationBtn onOperatorBtn={onOperatorBtn} />
+      </div>
+      <button onClick={onClear}>Clear</button>
     </div>
   );
 };
