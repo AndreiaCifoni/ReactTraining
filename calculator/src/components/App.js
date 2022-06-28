@@ -6,6 +6,7 @@ const App = () => {
   const [num1, setNum1] = useState("");
   const [num2, setNum2] = useState("");
   const [operator, setOperator] = useState("");
+  const [result, setResult] = useState("");
 
   const onNumBtn = (num) => {
     if (operator) {
@@ -25,17 +26,38 @@ const App = () => {
     setNum1("");
     setNum2("");
     setOperator("");
+    setResult("");
   };
 
-  //onResult
+  const onResult = () => {
+    switch (operator) {
+      case "+":
+        setResult(parseInt(num1) + parseInt(num2));
+        break;
+      case "-":
+        setResult(parseInt(num1) - parseInt(num2));
+        break;
+      case "x":
+        setResult(parseInt(num1) * parseInt(num2));
+        break;
+      case "/":
+        setResult(parseInt(num1) / parseInt(num2));
+        break;
+      default:
+        setResult("");
+    }
+  };
+
+  const math = num1 + operator + num2;
 
   return (
     <div>
       <div>
-        <p>{num1 + operator + num2}</p>
+        <p>{result ? result : math}</p>
       </div>
       <div>
         <NumericBtn onNumBtn={onNumBtn} />
+        <button onClick={onResult}>=</button>
       </div>
       <div>
         <OperationBtn onOperatorBtn={onOperatorBtn} />
