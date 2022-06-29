@@ -5,7 +5,7 @@ const OperationBtn = ({ onOperatorBtn }) => {
   const operators = ["+", "-", "x", "/"];
 
   return (
-    <div>
+    <div className="container-operator">
       {operators.map((operator) => {
         return (
           <button
