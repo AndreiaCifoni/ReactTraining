@@ -57,8 +57,7 @@ const App = () => {
         <p>{result ? result : math}</p>
       </div>
       <div className="numeric">
-        <NumericBtn onNumBtn={onNumBtn} />
-        <button onClick={onResult}>=</button>
+        <NumericBtn onNumBtn={onNumBtn} onResult={onResult} />
       </div>
       <div className="operation">
         <OperationBtn onOperatorBtn={onOperatorBtn} />
