@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NumericBtn from "./NumericBtn";
 import OperationBtn from "./OperationBtn";
+import "../style.css";
 
 const App = () => {
   const [num1, setNum1] = useState("");
@@ -51,18 +52,20 @@ const App = () => {
   const math = num1 + operator + num2;
 
   return (
-    <div>
-      <div>
+    <div className="container">
+      <div className="display">
         <p>{result ? result : math}</p>
       </div>
-      <div>
+      <div className="numeric">
         <NumericBtn onNumBtn={onNumBtn} />
         <button onClick={onResult}>=</button>
       </div>
-      <div>
+      <div className="operation">
         <OperationBtn onOperatorBtn={onOperatorBtn} />
       </div>
-      <button onClick={onClear}>Clear</button>
+      <button className="clear" onClick={onClear}>
+        Clear
+      </button>
     </div>
   );
 };
