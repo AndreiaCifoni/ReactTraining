@@ -1,24 +1,34 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
-const Search = () => {
-  const [search, setSearch] = useState("");
+// const Search = ({ getRecipe }) => {
+//   const [search, setSearch] = useState("");
+//   const [recipe, setRecipe] = useState("");
+//   const [error, setError] = useState(false);
 
-  const onSearch = () => {
-    // action to search term
+//   const onSearch = async () => {
+//     const newRecipes = await getRecipe();
+//     if (newRecipes) {
+//       setRecipe(newRecipes);
+//       setSearch("");
+//       setError(false);
+//     } else {
+//       setError(true);
+//     }
+//   };
 
-    setSearch("");
-  };
+//   return (
+//     <div>
+//       <input
+//         type="text"
+//         value={search}
+//         onChange={(e) => setSearch(e.target.value)}
+//       />
+//       <button onClick={() => onSearch(search)}>Go</button>
+//       <div>
+//         <p>{error ? "Try again" : recipe}</p>
+//       </div>
+//     </div>
+//   );
+// };
 
-  return (
-    <div>
-      <input
-        type="text"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
-      <button onClick={onSearch}>Go</button>
-    </div>
-  );
-};
-
-export default Search;
+// export default Search;
